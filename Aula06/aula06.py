@@ -66,3 +66,5 @@ print(texto8.count("a"))
 texto9 = "Eu amo Java"
 print(texto9.startswith("Eu"))
 print(texto9.endswith("va"))
+
+
