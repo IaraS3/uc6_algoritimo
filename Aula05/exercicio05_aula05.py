@@ -6,14 +6,14 @@ se o número for válido então use o laço de repetição para mostrar a tabuad
 o usuário digitou se o número for inválido então mostrar a mensagem “Número invalido, tente novamente”.
 """
 
-numero = int(input("Digite um número: "))
+# numero = int(input("Digite um número: "))
 
-while numero < 0:
-    print("Número inválido, tente novamente")
-    numero = int(input("Digite um número: "))
+# while numero < 0:
+#     print("Número inválido, tente novamente")
+#     numero = int(input("Digite um número: "))
 
-for i in range(1, 11):
-    print(numero, "x", i, "=", numero * i)
+# for i in range(1, 11):
+#     print(numero, "x", i, "=", numero * i)
 
 
 """
@@ -34,36 +34,36 @@ DESAFIO 1:Contando de 1 até 10 (marcando os pares)
 """
 DESAFIO 2: Menu
 """
-# while True:
-#     print("\nMENU")
-#     print("1 - Par ou Ímpar")
-#     print("2 - Tabuada")
-#     print("3 - Sair")
+while True:
+    print("\nMENU")
+    print("1 - Par ou Ímpar")
+    print("2 - Tabuada")
+    print("3 - Sair")
 
-#     opcao = int(input("Escolha uma opção: "))
+    opcao = int(input("Escolha uma opção: "))
 
-#     if opcao == 1:
-#         # Par ou Ímpar
-#         num = int(input("Digite um número inteiro: "))
-#         if num % 2 == 0:
-#             print("O número é par.")
-#         else:
-#             print("O número é ímpar.")
+    if opcao == 1:
+        # Par ou Ímpar
+        num = int(input("Digite um número inteiro: "))
+        if num % 2 == 0:
+            print("O número é par.")
+        else:
+            print("O número é ímpar.")
 
-#     if opcao == 2:
-#         # Tabuada
-#         num = int(input("Digite um número: "))
-#         while num < 0:
-#             print("Número inválido, tente novamente")
-#             num = int(input("Digite um número: "))
-#         for i in range(1, 11):
-#             print(num, "x", i, "=", num * i)
+    if opcao == 2:
+        # Tabuada
+        num = int(input("Digite um número: "))
+        while num < 0:
+            print("Número inválido, tente novamente")
+            num = int(input("Digite um número: "))
+        for i in range(1, 11):
+            print(num, "x", i, "=", num * i)
 
-#     if opcao == 3:
-#         # Sair
-#         print("Saindo")
-#         break
+    if opcao == 3:
+        # Sair
+        print("Saindo")
+        break
 
-#     if opcao != 1 and opcao != 2 and opcao != 3:
-#         print("Opção inválida, tente novamente.")
+    if opcao != 1 and opcao != 2 and opcao != 3:
+        print("Opção inválida, tente novamente.")
 
