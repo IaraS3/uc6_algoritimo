@@ -1,45 +1,27 @@
-#Bixar a extensao View para abrir as colunas
+import pandas as pd  # O pd é um apelido que damos para a biblioteca, podemos chamar o apelido no código, em vez de digitar pandas
 
-
-import pandas as pd # O pd e um apelido que damos para a biblioteca , podemos chamar o apelido no codigo , inves de digitar pandas
-
-nome = str(input("Digite seu nome: "))
-idade = int(input("Digite sua idade: "))  #usamos a idade comoum texto , porque nao vamos fazer calculos matematicos
+nome = input("Digite seu nome: ")
+idade = input("Digite sua idade: ")  # usamos a idade como texto, pois não faremos cálculos matemáticos
 altura = float(input("Digite sua altura: "))
-#Dicionario , para o diferencia ro dicionario de uma lista é dicionarios usamos {} e lista usamos []
-#Criação de um dicionario para receber os dados digitados pelo usuario
 
+# Criação de um dicionário para receber os dados digitados pelo usuário
 dados = {
     "nome": [nome],
     "idade": [idade],
     "altura": [altura]
 }
-#DataFrame e a criação de um excel no formato que o Pandas entende para trabalhar com dados
-# excel = pd.DataFrame(dados)
 
-# to _excel() > serve para criar uma nova planilhas , pegar os dados digitados pelo usuario em formato DataFrame e gravar na planilha criada
+# DataFrame é a criação de uma tabela que o Pandas entende para trabalhar com dados
+excel = pd.DataFrame(dados)
 
-# excel.to_excel("Aula12\cadastro_alunos.xlsx", index=False)
+# Ler o Excel existente
+leitura_excel = pd.read_excel("Aula12/cadastro_alunos.xlsx")  # Ajustei o nome do arquivo para consistente
+nova_linha = len(leitura_excel)  # Conta quantas linhas tem no Excel e cria novas linhas conforme necessidade
 
-# Loc / Numero da linha / coluna
-# Ler o Excel
-leitura_excel = pd.read_excel("Aula12\cadastro_alunos.xlsx")
-# nova_linha = len(leitura_excel) #conta quantas linhas tem no excel e cria novas linhas conforme necessidade.
+# Adicionar os novos dados na nova linha
+leitura_excel.loc[nova_linha, "nome"] = dados["nome"]
+leitura_excel.loc[nova_linha, "idade"] = dados["idade"]
+leitura_excel.loc[nova_linha, "altura"] = dados["altura"]
 
-# leitura_excel.loc[nova_linha, "nome"] = dados["nome"]
-# leitura_excel.loc[nova_linha, "idade"] = dados["idade"]
-# leitura_excel.loc[nova_linha, "altura"] = dados["altura"]
-
-
-
-# print(leitura_excel["idade"])
-
-# APAGAR LINHAS DE UMA PLANILHA
-# leitura_excel=leitura_excel.drop(3)
-
-leitura_excel.loc[2, "nome"] = dados["nome"]
-leitura_excel.loc[2, "idade"] = dados["idade"]
-leitura_excel.loc[2, "altura"] = dados["altura"]
-
-#SALVAR
-leitura_excel.to_excel("Aula12\cadastro_alunos.xlsx", index=False) #FUNÇÃO PARA SALVAR
+# Salvar de volta no Excel
+leitura_excel.to_excel("Aula12/cadastro_alunos.xlsx", index=False)
